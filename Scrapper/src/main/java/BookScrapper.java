@@ -10,7 +10,7 @@ public class BookScrapper {
         String url = "https://books.toscrape.com/";
         try {
             Document document = Jsoup.connect(url).get();
-            Elements books = document.select(".product_pod");//точку используем для получения класса продукта, для идентификатора хэштег
+            Elements books = document.select(".product_pod");
             for (Element bk : books) {
                 String title = bk.select("h3 > a").text();
                 String price = bk.select(".price_color").text();
